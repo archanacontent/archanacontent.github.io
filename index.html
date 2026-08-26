@@ -1,1 +1,1683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Archana Panda | Technical Content & Content Marketing</title>
+
+  <meta
+    name="description"
+    content="Archana Panda — Senior Technical Content Writer and Senior Technical Content Marketing Manager."
+  >
+
+  <style>
+    :root {
+      --bg: #101010;
+      --surface: #181818;
+      --surface-2: #202020;
+      --text: #f3f1ec;
+      --muted: #9b9b97;
+      --line: #333331;
+      --accent: #d7ff4f;
+      --accent-dark: #172000;
+      --max: 1280px;
+      --pad: clamp(20px, 4vw, 64px);
+      --ease: cubic-bezier(.22, .61, .36, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      padding-left: var(--pad);
+      padding-right: var(--pad);
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(16, 16, 16, .82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: var(--max);
+      margin: auto;
+      padding: 0 var(--pad);
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      transition: color .25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .theme-toggle {
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform .25s ease, border-color .25s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: rotate(25deg);
+      border-color: var(--accent);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: flex-end;
+      padding-top: 140px;
+      padding-bottom: 70px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 50px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero-title {
+      font-size: clamp(68px, 13vw, 190px);
+      line-height: .82;
+      letter-spacing: -.075em;
+      font-weight: 800;
+      text-transform: uppercase;
+      max-width: 1100px;
+    }
+
+    .hero-title span {
+      display: block;
+      overflow: hidden;
+    }
+
+    .hero-title .word {
+      display: inline-block;
+      transform: translateY(110%);
+      animation: revealWord 1s var(--ease) forwards;
+    }
+
+    .hero-title span:nth-child(2) .word {
+      animation-delay: .12s;
+    }
+
+    .hero-title span:nth-child(3) .word {
+      animation-delay: .24s;
+    }
+
+    @keyframes revealWord {
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .hero-side {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    .hero-role {
+      font-size: 15px;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    .hero-description {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .scroll-note {
+      margin-top: 35px;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       MARQUEE
+    ========================= */
+
+    .marquee-wrap {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+      padding: 18px 0;
+      white-space: nowrap;
+    }
+
+    .marquee {
+      display: inline-flex;
+      min-width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+
+    .marquee span {
+      display: inline-flex;
+      align-items: center;
+      gap: 30px;
+      margin-right: 30px;
+      font-size: clamp(18px, 2.4vw, 30px);
+      font-weight: 700;
+      letter-spacing: -.03em;
+      text-transform: uppercase;
+    }
+
+    .marquee i {
+      width: 7px;
+      height: 7px;
+      display: inline-block;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* =========================
+       SECTION HEADERS
+    ========================= */
+
+    section {
+      padding: 130px 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 70px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    .section-number {
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: .1em;
+    }
+
+    .section-title {
+      font-size: clamp(42px, 7vw, 92px);
+      line-height: .92;
+      letter-spacing: -.06em;
+      max-width: 850px;
+    }
+
+    .section-intro {
+      max-width: 310px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       CONTENT PILLARS
+    ========================= */
+
+    .pillars {
+      border-top: 1px solid var(--line);
+    }
+
+    .pillar {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pillar-button {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: 70px 1fr 50px;
+      align-items: center;
+      gap: 20px;
+      padding: 28px 0;
+      text-align: left;
+    }
+
+    .pillar-number {
+      color: var(--muted);
+      font-family: monospace;
+      font-size: 12px;
+    }
+
+    .pillar-name {
+      font-size: clamp(25px, 4vw, 52px);
+      line-height: 1;
+      letter-spacing: -.04em;
+      transition: color .25s ease;
+    }
+
+    .pillar-button:hover .pillar-name,
+    .pillar.active .pillar-name {
+      color: var(--accent);
+    }
+
+    .pillar-icon {
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      transition: transform .35s var(--ease);
+    }
+
+    .pillar.active .pillar-icon {
+      transform: rotate(45deg);
+      border-color: var(--accent);
+    }
+
+    .pillar-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .5s var(--ease);
+    }
+
+    .pillar-inner {
+      padding: 0 70px 32px 90px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .tag {
+      border: 1px solid var(--line);
+      padding: 10px 13px;
+      color: var(--muted);
+      font-size: 12px;
+      transition: all .25s ease;
+    }
+
+    .tag:hover {
+      color: var(--bg);
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* =========================
+       CONTENT LIFECYCLE
+    ========================= */
+
+    .process {
+      border-top: 1px solid var(--line);
+    }
+
+    .process-item {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .process-button {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 70px 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 23px 0;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .process-index {
+      font-family: monospace;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .process-name {
+      font-size: clamp(24px, 4vw, 48px);
+      letter-spacing: -.045em;
+      transition: transform .3s var(--ease);
+    }
+
+    .process-button:hover .process-name {
+      transform: translateX(12px);
+      color: var(--accent);
+    }
+
+    .process-symbol {
+      font-size: 24px;
+      color: var(--muted);
+      transition: transform .3s ease;
+    }
+
+    .process-item.active .process-symbol {
+      transform: rotate(45deg);
+      color: var(--accent);
+    }
+
+    .process-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s var(--ease);
+    }
+
+    .process-detail-inner {
+      padding: 0 0 25px 90px;
+      max-width: 750px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       SELECTED WORK
+    ========================= */
+
+    .work-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .work-item {
+      display: grid;
+      grid-template-columns: 70px 1fr 100px;
+      gap: 20px;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      padding: 25px 0;
+      transition: padding .3s var(--ease);
+    }
+
+    .work-item:hover {
+      padding-left: 15px;
+      padding-right: 15px;
+      background: var(--surface);
+    }
+
+    .work-number {
+      color: var(--muted);
+      font-family: monospace;
+      font-size: 11px;
+    }
+
+    .work-title {
+      font-size: clamp(21px, 3vw, 34px);
+      letter-spacing: -.03em;
+    }
+
+    .work-type {
+      color: var(--muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      text-align: right;
+    }
+
+    .work-note {
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* =========================
+       COMPLEX TO CLEAR
+    ========================= */
+
+    .statement {
+      min-height: 430px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .statement-label {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-family: monospace;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .statement-text {
+      font-size: clamp(45px, 9vw, 125px);
+      line-height: .87;
+      letter-spacing: -.07em;
+      text-transform: uppercase;
+      font-weight: 800;
+      transition: transform .5s var(--ease);
+    }
+
+    .statement:hover .statement-text {
+      transform: scale(1.04);
+    }
+
+    .statement-accent {
+      color: var(--accent);
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .about-large {
+      font-size: clamp(28px, 4vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -.045em;
+    }
+
+    .about-copy {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-title {
+      font-size: clamp(60px, 13vw, 180px);
+      line-height: .8;
+      letter-spacing: -.08em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .contact-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: flex-end;
+      border-top: 1px solid var(--line);
+      padding-top: 25px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 5px;
+      font-size: 13px;
+      transition: border-color .25s ease, color .25s ease;
+    }
+
+    .contact-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .footer-note {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* =========================
+       LIGHT MODE
+    ========================= */
+
+    body.light {
+      --bg: #f1efe9;
+      --surface: #e6e3dc;
+      --surface-2: #ddd9d0;
+      --text: #151515;
+      --muted: #66645f;
+      --line: #c7c3bb;
+      --accent: #426000;
+    }
+
+    /* =========================
+       REVEAL ANIMATION
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s var(--ease), transform .8s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 760px) {
+
+      .nav-inner {
+        min-height: 62px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 140px;
+        padding-bottom: 80px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .hero-title {
+        font-size: clamp(62px, 19vw, 120px);
+      }
+
+      .hero-side {
+        max-width: 430px;
+      }
+
+      section {
+        padding: 90px 0;
+      }
+
+      .section-header {
+        display: block;
+        margin-bottom: 45px;
+      }
+
+      .section-intro {
+        margin-top: 25px;
+      }
+
+      .pillar-button,
+      .process-button {
+        grid-template-columns: 38px 1fr 38px;
+        gap: 12px;
+      }
+
+      .pillar-inner {
+        padding: 0 0 25px 50px;
+      }
+
+      .process-detail-inner {
+        padding-left: 50px;
+      }
+
+      .work-item {
+        grid-template-columns: 38px 1fr;
+      }
+
+      .work-type {
+        display: none;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .contact {
+        min-height: 70vh;
+      }
+
+      .contact-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav class="nav">
+    <div class="nav-inner">
+
+      <a class="brand" href="#top">AP</a>
+
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        aria-label="Toggle colour theme"
+      >
+        ◐
+      </button>
+
+    </div>
+  </nav>
+
+
+  <main id="top">
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-grid">
+
+          <div>
+
+            <div class="eyebrow">
+              Technical Content / B2B / Content Marketing
+            </div>
+
+            <h1 class="hero-title">
+              <span><span class="word">ARCHANA</span></span>
+              <span><span class="word">PANDA</span></span>
+              <span><span class="word">CONTENT.</span></span>
+            </h1>
+
+          </div>
+
+          <div class="hero-side">
+
+            <div class="hero-role">
+              Senior Technical Content Writer<br>
+              Senior Technical Content Marketing Manager
+            </div>
+
+            <p class="hero-description">
+              Technical content that connects complex ideas with the
+              audiences they need to reach.
+            </p>
+
+            <div class="scroll-note">
+              ↓ Explore the work
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         MARQUEE
+    ========================= -->
+
+    <div class="marquee-wrap">
+
+      <div class="marquee">
+
+        <span>
+          Technical & Thought Leadership
+          <i></i>
+        </span>
+
+        <span>
+          B2B & Marketing Content
+          <i></i>
+        </span>
+
+        <span>
+          Product & Customer Content
+          <i></i>
+        </span>
+
+        <span>
+          Campaigns & Creative Content
+          <i></i>
+        </span>
+
+        <span>
+          Technical & Thought Leadership
+          <i></i>
+        </span>
+
+        <span>
+          B2B & Marketing Content
+          <i></i>
+        </span>
+
+        <span>
+          Product & Customer Content
+          <i></i>
+        </span>
+
+        <span>
+          Campaigns & Creative Content
+          <i></i>
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         CAPABILITIES
+    ========================= -->
+
+    <section id="capabilities">
+
+      <div class="container">
+
+        <div class="section-header reveal">
+
+          <div class="section-number">
+            01 / CONTENT
+          </div>
+
+          <h2 class="section-title">
+            Content, in all its forms.
+          </h2>
+
+          <p class="section-intro">
+            A broad technical and B2B content practice spanning
+            thought leadership, marketing, product, customer and
+            campaign content.
+          </p>
+
+        </div>
+
+
+        <div class="pillars">
+
+
+          <!-- PILLAR 01 -->
+
+          <div class="pillar">
+
+            <button class="pillar-button">
+
+              <span class="pillar-number">01</span>
+
+              <span class="pillar-name">
+                Technical & Thought Leadership
+              </span>
+
+              <span class="pillar-icon">+</span>
+
+            </button>
+
+            <div class="pillar-content">
+
+              <div class="pillar-inner">
+
+                <span class="tag">Articles & Blogs</span>
+                <span class="tag">Thought Leadership</span>
+                <span class="tag">White Papers</span>
+                <span class="tag">How-To Guides</span>
+                <span class="tag">Industry & Technology Content</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PILLAR 02 -->
+
+          <div class="pillar">
+
+            <button class="pillar-button">
+
+              <span class="pillar-number">02</span>
+
+              <span class="pillar-name">
+                B2B & Marketing Content
+              </span>
+
+              <span class="pillar-icon">+</span>
+
+            </button>
+
+            <div class="pillar-content">
+
+              <div class="pillar-inner">
+
+                <span class="tag">Case Studies</span>
+                <span class="tag">Listicles</span>
+                <span class="tag">Website Content</span>
+                <span class="tag">Emailers & Newsletters</span>
+                <span class="tag">Press Releases</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PILLAR 03 -->
+
+          <div class="pillar">
+
+            <button class="pillar-button">
+
+              <span class="pillar-number">03</span>
+
+              <span class="pillar-name">
+                Product & Customer Content
+              </span>
+
+              <span class="pillar-icon">+</span>
+
+            </button>
+
+            <div class="pillar-content">
+
+              <div class="pillar-inner">
+
+                <span class="tag">User Guides</span>
+                <span class="tag">Product Content</span>
+                <span class="tag">Technical Guides</span>
+                <span class="tag">Brochures & Booklets</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PILLAR 04 -->
+
+          <div class="pillar">
+
+            <button class="pillar-button">
+
+              <span class="pillar-number">04</span>
+
+              <span class="pillar-name">
+                Campaigns & Creative Content
+              </span>
+
+              <span class="pillar-icon">+</span>
+
+            </button>
+
+            <div class="pillar-content">
+
+              <div class="pillar-inner">
+
+                <span class="tag">Social Media Campaigns</span>
+                <span class="tag">Ads & Creatives</span>
+                <span class="tag">Campaign Messaging</span>
+                <span class="tag">Digital Content</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROCESS
+    ========================= -->
+
+    <section id="process">
+
+      <div class="container">
+
+        <div class="section-header reveal">
+
+          <div class="section-number">
+            02 / PROCESS
+          </div>
+
+          <h2 class="section-title">
+            From insight to execution.
+          </h2>
+
+          <p class="section-intro">
+            A content workflow grounded in ideation, research,
+            market understanding and strategic direction.
+          </p>
+
+        </div>
+
+
+        <div class="process">
+
+
+          <div class="process-item">
+
+            <button class="process-button">
+              <span class="process-index">01</span>
+              <span class="process-name">Ideate</span>
+              <span class="process-symbol">+</span>
+            </button>
+
+            <div class="process-detail">
+
+              <div class="process-detail-inner">
+                Topic discovery · Content opportunities · Audience
+                needs · Content angles · Story development · Format
+                selection
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="process-item">
+
+            <button class="process-button">
+              <span class="process-index">02</span>
+              <span class="process-name">Decode Market Pulse</span>
+              <span class="process-symbol">+</span>
+            </button>
+
+            <div class="process-detail">
+
+              <div class="process-detail-inner">
+                Industry trends · Technology shifts · Emerging
+                conversations · Audience interests · Market narratives
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="process-item">
+
+            <button class="process-button">
+              <span class="process-index">03</span>
+              <span class="process-name">Competitive Analysis</span>
+              <span class="process-symbol">+</span>
+            </button>
+
+            <div class="process-detail">
+
+              <div class="process-detail-inner">
+                Competitor content · Messaging analysis · Content gaps ·
+                Positioning · Differentiation opportunities
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="process-item">
+
+            <button class="process-button">
+              <span class="process-index">04</span>
+              <span class="process-name">Research</span>
+              <span class="process-symbol">+</span>
+            </button>
+
+            <div class="process-detail">
+
+              <div class="process-detail-inner">
+                Industry research · Technology research ·
+                Subject-matter research · Source analysis · Expert inputs
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="process-item">
+
+            <button class="process-button">
+              <span class="process-index">05</span>
+              <span class="process-name">Strategise</span>
+              <span class="process-symbol">+</span>
+            </button>
+
+            <div class="process-detail">
+
+              <div class="process-detail-inner">
+                Content direction · Content planning · Editorial approach ·
+                Channel alignment · Content journeys
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="process-item">
+
+            <button class="process-button">
+              <span class="process-index">06</span>
+              <span class="process-name">Create</span>
+              <span class="process-symbol">+</span>
+            </button>
+
+            <div class="process-detail">
+
+              <div class="process-detail-inner">
+                Articles · Blogs · Thought leadership · Case studies ·
+                White papers · Guides · Product content · Campaign content
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="process-item">
+
+            <button class="process-button">
+              <span class="process-index">07</span>
+              <span class="process-name">Edit</span>
+              <span class="process-symbol">+</span>
+            </button>
+
+            <div class="process-detail">
+
+              <div class="process-detail-inner">
+                Structural editing · Content refinement · Clarity and flow ·
+                Tone and voice · Quality control
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="process-item">
+
+            <button class="process-button">
+              <span class="process-index">08</span>
+              <span class="process-name">Execute</span>
+              <span class="process-symbol">+</span>
+            </button>
+
+            <div class="process-detail">
+
+              <div class="process-detail-inner">
+                Content production · Content adaptation ·
+                Publishing-ready assets · Campaign assets ·
+                Channel-ready content
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="process-item">
+
+            <button class="process-button">
+
+              <span class="process-index">09</span>
+
+              <span class="process-name">
+                Support Marketing
+              </span>
+
+              <span class="process-symbol">+</span>
+
+            </button>
+
+            <div class="process-detail">
+
+              <div class="process-detail-inner">
+                Content enablement · Campaign support ·
+                Sales and marketing collateral · Distribution-ready content ·
+                Content amplification
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SELECTED WORK
+    ========================= -->
+
+    <section id="work">
+
+      <div class="container">
+
+        <div class="section-header reveal">
+
+          <div class="section-number">
+            03 / SELECTED WORK
+          </div>
+
+          <h2 class="section-title">
+            Work worth reading.
+          </h2>
+
+          <p class="section-intro">
+            A growing selection of independently created and
+            publicly shareable work.
+          </p>
+
+        </div>
+
+
+        <div class="work-list">
+
+          <a
+            class="work-item"
+            href="#"
+            onclick="return false;"
+          >
+            <span class="work-number">01</span>
+
+            <span class="work-title">
+              Featured article / blog
+            </span>
+
+            <span class="work-type">
+              Article
+            </span>
+          </a>
+
+
+          <a
+            class="work-item"
+            href="#"
+            onclick="return false;"
+          >
+            <span class="work-number">02</span>
+
+            <span class="work-title">
+              Featured thought leadership piece
+            </span>
+
+            <span class="work-type">
+              Thought Leadership
+            </span>
+          </a>
+
+
+          <a
+            class="work-item"
+            href="#"
+            onclick="return false;"
+          >
+            <span class="work-number">03</span>
+
+            <span class="work-title">
+              Featured technical content
+            </span>
+
+            <span class="work-type">
+              Technical
+            </span>
+          </a>
+
+        </div>
+
+
+        <p class="work-note">
+          Portfolio samples will be added progressively.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         COMPLEX TO CLEAR
+    ========================= -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-header reveal">
+
+          <div class="section-number">
+            04 / APPROACH
+          </div>
+
+          <h2 class="section-title">
+            Complex to clear.
+          </h2>
+
+          <p class="section-intro">
+            Clear communication starts with understanding the
+            subject, the audience and the context.
+          </p>
+
+        </div>
+
+
+        <div class="statement reveal">
+
+          <div class="statement-label">
+            CONTENT PRINCIPLE / 001
+          </div>
+
+          <div class="statement-text">
+            COMPLEX<br>
+            <span class="statement-accent">→</span><br>
+            CLEAR
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="section-header reveal">
+
+          <div class="section-number">
+            05 / ABOUT
+          </div>
+
+          <h2 class="section-title">
+            Content with context.
+          </h2>
+
+        </div>
+
+
+        <div class="about-grid reveal">
+
+          <div class="about-large">
+            Technical depth meets editorial clarity and
+            B2B content thinking.
+          </div>
+
+          <div class="about-copy">
+
+            <p>
+              Senior technical content writing and content marketing
+              across a broad range of formats, audiences and business
+              contexts.
+            </p>
+
+            <br>
+
+            <p>
+              From articles, blogs and thought leadership to case
+              studies, guides, product content, campaigns and
+              marketing collateral.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact" class="contact">
+
+      <div class="container">
+
+        <div class="section-number">
+          06 / CONTACT
+        </div>
+
+        <h2 class="contact-title">
+          Let's<br>
+          connect.
+        </h2>
+
+        <div class="contact-bottom">
+
+          <div class="contact-links">
+
+            <!-- Replace # with your actual LinkedIn URL -->
+
+            <a
+              class="contact-link"
+              href="#"
+              target="_blank"
+              rel="noopener"
+            >
+              LinkedIn ↗
+            </a>
+
+            <!-- Replace the email address below -->
+
+            <button
+              class="contact-link"
+              id="copyEmail"
+              style="background:none;color:inherit;cursor:pointer;"
+            >
+              Copy email
+            </button>
+
+          </div>
+
+          <div class="footer-note">
+            © 2026 Archana Panda
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script>
+
+    /* =========================
+       PILLAR ACCORDIONS
+    ========================= */
+
+    document.querySelectorAll(".pillar-button").forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const pillar = button.closest(".pillar");
+        const content = pillar.querySelector(".pillar-content");
+
+        document.querySelectorAll(".pillar").forEach(other => {
+
+          if (other !== pillar) {
+            other.classList.remove("active");
+
+            const otherContent =
+              other.querySelector(".pillar-content");
+
+            otherContent.style.maxHeight = null;
+          }
+
+        });
+
+        pillar.classList.toggle("active");
+
+        if (pillar.classList.contains("active")) {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+          content.style.maxHeight = null;
+        }
+
+      });
+
+    });
+
+
+    /* =========================
+       PROCESS ACCORDIONS
+    ========================= */
+
+    document.querySelectorAll(".process-button").forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const item = button.closest(".process-item");
+        const detail = item.querySelector(".process-detail");
+
+        document.querySelectorAll(".process-item").forEach(other => {
+
+          if (other !== item) {
+
+            other.classList.remove("active");
+
+            const otherDetail =
+              other.querySelector(".process-detail");
+
+            otherDetail.style.maxHeight = null;
+          }
+
+        });
+
+        item.classList.toggle("active");
+
+        if (item.classList.contains("active")) {
+          detail.style.maxHeight = detail.scrollHeight + "px";
+        } else {
+          detail.style.maxHeight = null;
+        }
+
+      });
+
+    });
+
+
+    /* =========================
+       SCROLL REVEALS
+    ========================= */
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+
+        });
+
+      },
+      {
+        threshold: .12
+      }
+    );
+
+    document.querySelectorAll(".reveal").forEach(element => {
+      observer.observe(element);
+    });
+
+
+    /* =========================
+       DARK / LIGHT MODE
+    ========================= */
+
+    const themeToggle =
+      document.getElementById("themeToggle");
+
+    themeToggle.addEventListener("click", () => {
+
+      document.body.classList.toggle("light");
+
+      localStorage.setItem(
+        "archana-theme",
+        document.body.classList.contains("light")
+          ? "light"
+          : "dark"
+      );
+
+    });
+
+
+    const savedTheme =
+      localStorage.getItem("archana-theme");
+
+    if (savedTheme === "light") {
+      document.body.classList.add("light");
+    }
+
+
+    /* =========================
+       COPY EMAIL
+       Replace the email below
+    ========================= */
+
+    const copyEmail =
+      document.getElementById("copyEmail");
+
+    copyEmail.addEventListener("click", async () => {
+
+      const email = "YOUR-EMAIL@example.com";
+
+      try {
+
+        await navigator.clipboard.writeText(email);
+
+        copyEmail.textContent = "Email copied ✓";
+
+        setTimeout(() => {
+          copyEmail.textContent = "Copy email";
+        }, 1800);
+
+      } catch (error) {
+
+        copyEmail.textContent = email;
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
