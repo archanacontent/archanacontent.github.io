@@ -222,24 +222,26 @@ ul{margin:0;padding:0;list-style:none}
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .btn-ghost:hover{border-color:var(--lilac);color:var(--lilac);transform:translateY(-2px)}
 
-/* New release card: Asked */
-.release{display:flex;align-items:center;gap:clamp(14px,2vw,26px);margin-top:clamp(22px,2.6vw,36px);
-  padding:clamp(16px,1.8vw,22px) clamp(18px,2.2vw,28px);border-radius:var(--r,14px);color:inherit;text-decoration:none;
-  border:1px solid transparent;
-  background:linear-gradient(rgba(11,12,26,.82),rgba(11,12,26,.82)) padding-box,
-             linear-gradient(96deg,rgba(236,72,153,.7),rgba(168,85,247,.7) 50%,rgba(255,122,69,.75)) border-box;
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:.35s var(--ease)}
-.release:hover{transform:translateY(-2px);box-shadow:0 18px 44px -18px rgba(255,122,69,.55)}
-.release-tag{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:99px;
-  font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#FFB08F;background:rgba(255,122,69,.12);border:1px solid rgba(255,122,69,.35)}
-.release-tag i{width:6px;height:6px;border-radius:50%;background:#FF7A45;animation:relpulse 1.6s ease-in-out infinite}
+/* New release band: Asked, full width like the image band */
+.release{position:relative;z-index:3;display:flex;align-items:center;gap:clamp(12px,1.8vw,22px);
+  margin:clamp(16px,2.2vw,28px) 0 0;padding:clamp(12px,1.4vw,16px) clamp(22px,3.6vw,56px);
+  color:inherit;text-decoration:none;border-style:solid;border-width:1px 0;
+  border-image:linear-gradient(90deg,rgba(236,72,153,.55),rgba(168,85,247,.55) 50%,rgba(255,122,69,.6)) 1;
+  background:linear-gradient(90deg,rgba(255,122,69,.07),rgba(168,85,247,.05) 55%,rgba(255,255,255,.02));
+  transition:background .35s var(--ease)}
+.release:hover{background:linear-gradient(90deg,rgba(255,122,69,.12),rgba(168,85,247,.08) 55%,rgba(255,255,255,.03))}
+.release-tag{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;padding:5px 10px;border-radius:99px;
+  font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#FFB08F;background:rgba(255,122,69,.1);border:1px solid rgba(255,122,69,.3)}
+.release-tag i{width:5px;height:5px;border-radius:50%;background:#FF7A45;animation:relpulse 1.6s ease-in-out infinite}
 @keyframes relpulse{50%{opacity:.3}}
 .release-copy{flex:1 1 auto;min-width:0}
-.release-t{display:block;font-family:var(--f-h);font-weight:700;font-size:clamp(16px,1.7vw,21px);line-height:1.25;letter-spacing:-.01em}
+.release-t{display:block;font-family:var(--f-h);font-weight:700;font-size:clamp(14.5px,1.45vw,18px);line-height:1.3;letter-spacing:-.01em}
 .release-t b{font-style:italic;font-weight:700;color:#FF7A45}
-.release-d{display:block;margin-top:4px;font-size:clamp(13px,1.2vw,15px);line-height:1.5;color:var(--mute)}
-.release-go{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:#FF9A70;white-space:nowrap}
-@media (max-width:720px){.release{flex-wrap:wrap}.release-copy{flex-basis:100%;order:2}.release-go{order:3}}
+.release-d{display:block;margin-top:3px;font-size:clamp(12.5px,1.1vw,14px);line-height:1.5;color:var(--mute)}
+.release-go{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:#FF9A70;white-space:nowrap}
+.release:hover .release-go{color:#FFB08F}
+.release + .hero-band{margin-top:0;border-top:0}
+@media (max-width:720px){.release{flex-wrap:wrap;gap:8px 12px}.release-copy{flex-basis:100%;order:2}.release-go{order:3}}
 @media (prefers-reduced-motion:reduce){.release-tag i{animation:none}}
 
 .hero-band{position:relative;z-index:3;margin:clamp(22px,3vw,40px) 0 0;aspect-ratio:16/8;
@@ -533,7 +535,9 @@ ul{margin:0;padding:0;list-style:none}
         <a class="btn btn-ghost" href="#work">See the work</a>
       </div>
     </div>
-    <a class="release" href="https://archanacontent.github.io/asked/" aria-label="New release: explore Asked, my free AEO and GEO question finder">
+  </div>
+
+  <a class="release" href="https://archanacontent.github.io/asked/" aria-label="New release: explore Asked, my free AEO and GEO question finder">
       <span class="release-tag"><i aria-hidden="true"></i>New Release</span>
       <span class="release-copy">
         <span class="release-t">Explore <b>Asked</b>, My Free AEO And GEO Question Finder</span>
@@ -541,8 +545,6 @@ ul{margin:0;padding:0;list-style:none}
       </span>
       <span class="release-go">Try Asked <span aria-hidden="true">↗</span></span>
     </a>
-  </div>
-
   <div class="slot ph-hero hero-band">
       <div class="pic"></div>
     <span class="gcard">Complex technology, made clear <i></i></span>
