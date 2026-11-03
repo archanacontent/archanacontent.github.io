@@ -545,7 +545,7 @@ body{font-weight:400}
 .fw-filter button:hover{border-color:#EFEBE3}
 .fw-filter button.on{background:#EFEBE3;color:#17181B;border-color:#EFEBE3}
 .fw-card.hide{display:none}
-@media (max-width:560px){.fw-filter{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-16px;padding-right:16px}.fw-filter::-webkit-scrollbar{display:none}.fw-filter button{flex:none}}
+@media (max-width:560px){.fw-filter{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-14px;padding-right:14px}.fw-filter::-webkit-scrollbar{display:none}.fw-filter button{flex:none}}
 .fw{margin-top:clamp(12px,1.4vw,18px);--ac:#D9A441;scroll-margin-top:clamp(16px,3vw,34px)}
 .fw-grid{margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,18px)}
 .fw-card{background:#EFEBE3;color:#17181B;border-radius:14px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
@@ -566,7 +566,21 @@ body{font-weight:400}
 .pair{grid-template-columns:.94fr 1.06fr}
 @media (max-width:1080px){.fw-grid{grid-template-columns:repeat(2,1fr)}.fw-big{grid-template-columns:1fr}.fw-big .fw-th{height:220px;margin:0 16px 16px}}
 @media (max-width:840px){.pair{grid-template-columns:1fr}}
-@media (max-width:560px){.fw-grid{grid-template-columns:1fr}.fw-th{height:180px}}
+@media (max-width:560px){
+  .fw-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:16px -14px 0;padding:0 14px 6px;scroll-padding-left:14px;scrollbar-width:none;-webkit-overflow-scrolling:touch;align-items:flex-start}
+  .fw-grid::-webkit-scrollbar{display:none}
+  .fw-card{flex:0 0 84%;scroll-snap-align:start}
+  .fw-card:hover{transform:none;box-shadow:none}
+  .fw-th{height:170px}
+  .fw-big{display:flex;flex-direction:column}
+  .fw-big .fw-th{display:none}
+  .fw-big .fw-go{margin-bottom:22px}
+  .fw-big .fw-t{font-size:19px}
+  .fw-dots{display:flex;justify-content:center;gap:6px;margin:14px 0 6px}
+  .fw-dots i{width:6px;height:6px;border-radius:50%;background:#3A3B40;transition:background .2s,width .2s}
+  .fw-dots i.on{background:#D9A441;width:16px;border-radius:3px}
+}
+@media (min-width:561px){.fw-dots{display:none}}
 </style>
 </head>
 <body>
@@ -694,6 +708,7 @@ body{font-weight:400}
       </a>
       <!-- AI WASHING: when the link is live, copy a card above, point href to it and use thumbs/aiwashing.jpg -->
   </div>
+  <div class="fw-dots" aria-hidden="true"></div>
 </section>
 
 <!-- ===================== CONTENT THAT CONVERTS ===================== -->
@@ -990,10 +1005,18 @@ body{font-weight:400}
 })();
 </script>
 <script>
-(function(){var f=document.querySelector('.fw-filter');if(!f)return;var cards=document.querySelectorAll('.fw-card');
-f.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var v=b.getAttribute('data-f');
+(function(){var g=document.querySelector('.fw-grid'),f=document.querySelector('.fw-filter'),d=document.querySelector('.fw-dots');if(!g)return;
+var big=g.querySelector('.fw-big'),list=[].slice.call(g.querySelectorAll('.fw-card:not(.fw-big)'));
+for(var i=list.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=list[i];list[i]=list[j];list[j]=t}
+list.forEach(function(c){g.insertBefore(c,big)});
+function vis(){return [].slice.call(g.querySelectorAll('.fw-card:not(.hide)'))}
+function dots(){if(!d)return;d.innerHTML='';vis().forEach(function(){d.appendChild(document.createElement('i'))});mark()}
+function mark(){if(!d)return;var v=vis(),k=0,m=1e9;v.forEach(function(c,n){var x=Math.abs(c.offsetLeft-g.offsetLeft-g.scrollLeft-14);if(x<m){m=x;k=n}});[].forEach.call(d.children,function(e,n){e.classList.toggle('on',n===k)})}
+g.addEventListener('scroll',function(){window.requestAnimationFrame(mark)},{passive:true});
+if(f)f.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var v=b.getAttribute('data-f');
 f.querySelectorAll('button').forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on)});
-cards.forEach(function(c){c.classList.toggle('hide',v!=='all'&&c.getAttribute('data-ind')!==v)});});})();
+g.querySelectorAll('.fw-card').forEach(function(c){c.classList.toggle('hide',v!=='all'&&c.getAttribute('data-ind')!==v)});g.scrollLeft=0;dots();});
+dots();})();
 </script>
 </body>
 </html>
