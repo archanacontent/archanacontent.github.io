@@ -538,49 +538,6 @@ ul{margin:0;padding:0;list-style:none}
   --cyan:#D9A441;--purple:#D9A441;--pink:#D9A441;--blue:#D9A441;--lilac:#D9A441;--teal:#D9A441;--orange:#D9A441;
   --f-b:'Public Sans',Arial,sans-serif;--r:8px;--photo:saturate(.35) brightness(.95)}
 body{font-weight:400}
-
-/* Featured Work cards */
-.fw-filter{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.fw-filter button{font:600 12.5px/1 Inter,sans-serif;color:var(--ink);background:transparent;border:1px solid #3A3B40;border-radius:999px;padding:8px 14px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
-.fw-filter button:hover{border-color:#EFEBE3}
-.fw-filter button.on{background:#EFEBE3;color:#17181B;border-color:#EFEBE3}
-.fw-card.hide{display:none}
-@media (max-width:560px){.fw-filter{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-14px;padding-right:14px}.fw-filter::-webkit-scrollbar{display:none}.fw-filter button{flex:none}}
-.fw{margin-top:clamp(12px,1.4vw,18px);--ac:#D9A441;scroll-margin-top:clamp(16px,3vw,34px)}
-.fw-grid{margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,18px)}
-.fw-card{background:#EFEBE3;color:#17181B;border-radius:14px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
-.fw-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.35)}
-.fw-top{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:14px 16px 0}
-.fw-ind{font:600 11.5px/1 Inter,sans-serif;border:1px solid #17181B;border-radius:999px;padding:4px 10px;white-space:nowrap}
-.fw-ty{font:500 12px/1.2 Inter,sans-serif;color:#5E5A53;text-align:right}
-.fw-th{display:block;height:150px;margin:12px 16px 0;border-radius:8px;overflow:hidden;border:1px solid #D6D0C4;background:#fff}
-.fw-th img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
-.fw-t{display:block;font:700 15.5px/1.3 Archivo,sans-serif;margin:14px 16px 18px}
-.fw-big{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.3fr;align-items:stretch}
-.fw-big .fw-copy{display:flex;flex-direction:column}
-.fw-big .fw-top{justify-content:flex-start;gap:12px}
-.fw-big .fw-t{font-size:clamp(22px,2.4vw,30px);margin:14px 16px 10px}
-.fw-d{display:block;margin:0 16px;color:#5E5A53;font-size:14.5px;line-height:1.55;max-width:42ch}
-.fw-go{display:inline-flex;align-items:center;gap:6px;margin:18px 16px;font:600 14px Inter,sans-serif;color:#17181B;border-bottom:1.5px solid #D9A441;align-self:flex-start;padding-bottom:2px}
-.fw-big .fw-th{height:280px;margin:16px}
-.pair{grid-template-columns:.94fr 1.06fr}
-@media (max-width:1080px){.fw-grid{grid-template-columns:repeat(2,1fr)}.fw-big{grid-template-columns:1fr}.fw-big .fw-th{height:220px;margin:0 16px 16px}}
-@media (max-width:840px){.pair{grid-template-columns:1fr}}
-@media (max-width:560px){
-  .fw-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:16px -14px 0;padding:0 14px 6px;scroll-padding-left:14px;scrollbar-width:none;-webkit-overflow-scrolling:touch;align-items:flex-start}
-  .fw-grid::-webkit-scrollbar{display:none}
-  .fw-card{flex:0 0 84%;scroll-snap-align:start}
-  .fw-card:hover{transform:none;box-shadow:none}
-  .fw-th{height:170px}
-  .fw-big{display:flex;flex-direction:column}
-  .fw-big .fw-th{display:none}
-  .fw-big .fw-go{margin-bottom:22px}
-  .fw-big .fw-t{font-size:19px}
-  .fw-dots{display:flex;justify-content:center;gap:6px;margin:14px 0 6px}
-  .fw-dots i{width:6px;height:6px;border-radius:50%;background:#3A3B40;transition:background .2s,width .2s}
-  .fw-dots i.on{background:#D9A441;width:16px;border-radius:3px}
-}
-@media (min-width:561px){.fw-dots{display:none}}
 </style>
 </head>
 <body>
@@ -629,6 +586,14 @@ body{font-weight:400}
     </div>
   </div>
 
+  <a class="release" href="https://archanacontent.github.io/asked/" aria-label="New release: explore Asked, my free AEO and GEO question finder">
+      <span class="release-tag"><i aria-hidden="true"></i>New Release</span>
+      <span class="release-copy">
+        <span class="release-t"><b>Asked</b>, A Free Tool That Finds The Questions AI Search Is Asking</span>
+        <span class="release-d">Enter a B2B keyword and see what buyers are asking AI search about it, with the evidence behind every question.</span>
+      </span>
+      <span class="release-go">Try Asked <span aria-hidden="true"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+    </a>
   <div class="slot ph-hero hero-band">
       <div class="pic"></div>
     <span class="gcard">Industries I Write For <i></i></span>
@@ -642,74 +607,6 @@ body{font-weight:400}
     </div>
   </div>
 </header>
-
-<!-- ===================== FEATURED WORK ===================== -->
-<section class="fw r" id="work">
-  <div class="sh"><h2>Featured Work</h2></div>
-  <div class="fw-filter" role="group" aria-label="Filter by industry">
-    <button type="button" class="on" data-f="all" aria-pressed="true">All</button>
-    <button type="button" data-f="Cybersecurity" aria-pressed="false">Cybersecurity</button>
-    <button type="button" data-f="Healthcare" aria-pressed="false">Healthcare</button>
-    <button type="button" data-f="Life Sciences" aria-pressed="false">Life Sciences</button>
-    <button type="button" data-f="B2B SaaS" aria-pressed="false">B2B SaaS</button>
-    <button type="button" data-f="Customer Experience" aria-pressed="false">Customer Experience</button>
-    <button type="button" data-f="AI" aria-pressed="false">AI</button>
-    <button type="button" data-f="AI Search" aria-pressed="false">AI Search</button>
-  </div>
-  <div class="fw-grid">
-      <a class="fw-card" data-ind="Cybersecurity" href="https://github.com/archanacontent/nvd-cve-api-docs" target="_blank" rel="noopener">
-        <span class="fw-top"><span class="fw-ind">Cybersecurity</span><span class="fw-ty">Developer guide</span></span>
-        <span class="fw-th"><img src="thumbs/nvd.jpg" alt="" loading="lazy"></span>
-        <span class="fw-t">Cybersecurity Risk Prioritization After The 2026 NVD Change</span>
-      </a>
-      <a class="fw-card" data-ind="Healthcare" href="https://archanacontent.github.io/medicaid-2027-implementation-guide/" target="_blank" rel="noopener">
-        <span class="fw-top"><span class="fw-ind">Healthcare</span><span class="fw-ty">Implementation guide</span></span>
-        <span class="fw-th"><img src="thumbs/medicaid.jpg" alt="" loading="lazy"></span>
-        <span class="fw-t">Medicaid's January 2027 Double Deadline</span>
-      </a>
-      <a class="fw-card" data-ind="Healthcare" href="https://archanacontent.github.io/medically-frail-guide/" target="_blank" rel="noopener">
-        <span class="fw-top"><span class="fw-ind">Healthcare</span><span class="fw-ty">Policy guide</span></span>
-        <span class="fw-th"><img src="thumbs/frail.jpg" alt="" loading="lazy"></span>
-        <span class="fw-t">Medically Frail: The Exemption States Can't Afford To Get Wrong</span>
-      </a>
-      <a class="fw-card" data-ind="Life Sciences" href="https://archanacontent.github.io/openfda-drug-safety-guide/" target="_blank" rel="noopener">
-        <span class="fw-top"><span class="fw-ind">Life Sciences</span><span class="fw-ty">Developer guide</span></span>
-        <span class="fw-th"><img src="thumbs/openfda.jpg" alt="" loading="lazy"></span>
-        <span class="fw-t">The Risk In openFDA Adverse Event Data</span>
-      </a>
-      <a class="fw-card" data-ind="B2B SaaS" href="https://archanacontent.github.io/b2b-saas/" target="_blank" rel="noopener">
-        <span class="fw-top"><span class="fw-ind">B2B SaaS</span><span class="fw-ty">GTM playbook</span></span>
-        <span class="fw-th"><img src="thumbs/playbook.jpg" alt="" loading="lazy"></span>
-        <span class="fw-t">B2B SaaS Product Launch Playbook</span>
-      </a>
-      <a class="fw-card" data-ind="Customer Experience" href="https://archanacontent.github.io/rfp-response/" target="_blank" rel="noopener">
-        <span class="fw-top"><span class="fw-ind">Customer Experience</span><span class="fw-ty">Proposal</span></span>
-        <span class="fw-th"><img src="thumbs/rfp.jpg" alt="" loading="lazy"></span>
-        <span class="fw-t">RFP Response: Member Services Contact Centre Outsourcing</span>
-      </a>
-      <a class="fw-card" data-ind="Life Sciences" href="samples/SOP-ELN-001.pdf" target="_blank" rel="noopener">
-        <span class="fw-top"><span class="fw-ind">Life Sciences</span><span class="fw-ty">SOP</span></span>
-        <span class="fw-th"><img src="thumbs/sop.jpg" alt="" loading="lazy"></span>
-        <span class="fw-t">SOP: Recording And Signing An ELN Experiment Entry</span>
-      </a>
-      <a class="fw-card" data-ind="AI" href="https://docs.google.com/document/d/11W0LVpyEug10N7WzVpxeMKN7qoAbccKJFo5tWjJUIwQ/edit?usp=drivesdk" target="_blank" rel="noopener">
-        <span class="fw-top"><span class="fw-ind">AI</span><span class="fw-ty">Article</span></span>
-        <span class="fw-th"><img src="thumbs/agentic.jpg" alt="" loading="lazy"></span>
-        <span class="fw-t">Why Do Agentic AI Projects Fail? What Changed In 2026</span>
-      </a>
-      <a class="fw-card fw-big" data-ind="AI Search" href="https://archanacontent.github.io/asked/" target="_blank" rel="noopener">
-        <span class="fw-copy">
-          <span class="fw-top"><span class="fw-ind">AI Search</span><span class="fw-ty">Free tool</span></span>
-          <span class="fw-t">Asked: The Questions AI Search Is Asking</span>
-          <span class="fw-d">A free tool that finds the questions buyers ask AI search about a B2B keyword, with the evidence behind each one.</span>
-          <span class="fw-go">Try Asked <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </span>
-        <span class="fw-th"><img src="thumbs/asked.jpg" alt="" loading="lazy"></span>
-      </a>
-      <!-- AI WASHING: when the link is live, copy a card above, point href to it and use thumbs/aiwashing.jpg -->
-  </div>
-  <div class="fw-dots" aria-hidden="true"></div>
-</section>
 
 <!-- ===================== CONTENT THAT CONVERTS ===================== -->
 <section class="block converts r">
@@ -903,7 +800,7 @@ body{font-weight:400}
 </section>
 
 <!-- ===================== TOOLS / WORK ===================== -->
-<div class="row pair">
+<div class="row trio">
 
   <section class="block pad tools r">
     <div class="sh"><h2>Tools &amp; Platforms</h2></div>
@@ -928,6 +825,54 @@ body{font-weight:400}
     </div>
   </section>
 
+  <section class="block pad works r" id="work">
+    <div class="sh"><h2>Featured Work</h2></div>
+    <div class="wlist">
+      <a class="witem" href="https://github.com/archanacontent/nvd-cve-api-docs" target="_blank" rel="noopener">
+        <div class="slot ph-a wthumb shot"><img src="thumbs/nvd.jpg" alt=""></div>
+        <div class="wbody"><h4>Cybersecurity Risk Prioritization After the 2026 NVD Change - NVD CVE API Developer Guide</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="witem" href="https://archanacontent.github.io/medicaid-2027-implementation-guide/" target="_blank" rel="noopener">
+        <div class="slot ph-c wthumb shot"><img src="thumbs/medicaid.jpg" alt=""></div>
+        <div class="wbody"><h4>Medicaid's January 2027 Double Deadline - Medicaid 2027 Implementation Guide</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="witem" href="https://archanacontent.github.io/medically-frail-guide/" target="_blank" rel="noopener">
+        <div class="slot ph-e wthumb shot"><img src="thumbs/frail.jpg" alt=""></div>
+        <div class="wbody"><h4>Medically Frail: The Exemption States Can't Afford To Get Wrong - Medicaid 2027 Series, Part 2</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="witem" href="https://archanacontent.github.io/openfda-drug-safety-guide/" target="_blank" rel="noopener">
+        <div class="slot ph-d wthumb shot"><img src="thumbs/openfda.jpg" alt=""></div>
+        <div class="wbody"><h4>The Risk In openFDA Adverse Event Data - openFDA Drug Safety Developer Guide</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="witem" href="https://archanacontent.github.io/b2b-saas/" target="_blank" rel="noopener">
+        <div class="slot ph-a wthumb shot"><img src="thumbs/playbook.jpg" alt=""></div>
+        <div class="wbody"><h4>B2B SaaS Product Launch Playbook</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="witem" href="https://archanacontent.github.io/rfp-response/" target="_blank" rel="noopener">
+        <div class="slot ph-c wthumb shot"><img src="thumbs/rfp.jpg" alt=""></div>
+        <div class="wbody"><h4>RFP Response: Member Services Contact Centre Outsourcing</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="witem" href="samples/SOP-ELN-001.pdf" target="_blank" rel="noopener">
+        <div class="slot ph-e wthumb shot"><img src="thumbs/sop.jpg" alt=""></div>
+        <div class="wbody"><h4>SOP: Recording And Signing An Experiment Entry In An Electronic Lab Notebook</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="witem" href="https://docs.google.com/document/d/11W0LVpyEug10N7WzVpxeMKN7qoAbccKJFo5tWjJUIwQ/edit?usp=drivesdk" target="_blank" rel="noopener">
+        <div class="slot ph-b wthumb shot"><img src="thumbs/agentic.jpg" alt=""></div>
+        <div class="wbody"><h4>Why Do Agentic AI Projects Fail? What Changed in 2026</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <div class="witem pending">
+        <div class="slot ph-a wthumb shot"><img src="thumbs/aiwashing.jpg" alt=""></div>
+        <div class="wbody"><h4>What is AI Washing? The Tech World's New Deceptive Marketing Trend</h4><span class="soon">Coming soon</span></div>
+      </div>
+      <!-- WHEN THE AI WASHING LINK IS READY:
+           1. change the wrapper above from a div to an anchor
+           2. give it  class="witem"  href="YOUR-URL"  target="_blank"  rel="noopener"
+           3. drop the word pending from the class
+           4. delete the span with class soon, and add an arrow span
+              after the wbody div:  <span class="wgo">arrow</span>
+           Copy the shape from the Agentic AI entry above. -->
+    </div>
+  </section>
 
   <section class="block pad early r">
     <div class="sh"><h2>Early Works</h2></div>
@@ -1003,20 +948,6 @@ body{font-weight:400}
   },{threshold:.08, rootMargin:'0px 0px -5% 0px'});
   document.querySelectorAll('.r').forEach(function(el){ io.observe(el); });
 })();
-</script>
-<script>
-(function(){var g=document.querySelector('.fw-grid'),f=document.querySelector('.fw-filter'),d=document.querySelector('.fw-dots');if(!g)return;
-var big=g.querySelector('.fw-big'),list=[].slice.call(g.querySelectorAll('.fw-card:not(.fw-big)'));
-for(var i=list.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=list[i];list[i]=list[j];list[j]=t}
-list.forEach(function(c){g.insertBefore(c,big)});
-function vis(){return [].slice.call(g.querySelectorAll('.fw-card:not(.hide)'))}
-function dots(){if(!d)return;d.innerHTML='';vis().forEach(function(){d.appendChild(document.createElement('i'))});mark()}
-function mark(){if(!d)return;var v=vis(),k=0,m=1e9;v.forEach(function(c,n){var x=Math.abs(c.offsetLeft-g.offsetLeft-g.scrollLeft-14);if(x<m){m=x;k=n}});[].forEach.call(d.children,function(e,n){e.classList.toggle('on',n===k)})}
-g.addEventListener('scroll',function(){window.requestAnimationFrame(mark)},{passive:true});
-if(f)f.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var v=b.getAttribute('data-f');
-f.querySelectorAll('button').forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on)});
-g.querySelectorAll('.fw-card').forEach(function(c){c.classList.toggle('hide',v!=='all'&&c.getAttribute('data-ind')!==v)});g.scrollLeft=0;dots();});
-dots();})();
 </script>
 </body>
 </html>
