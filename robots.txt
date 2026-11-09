@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://archanacontent.github.io/sitemap.xml
+Sitemap: https://archanacontent.github.io/nih-sbir-proposal-guide/sitemap.xml
+Sitemap: https://archanacontent.github.io/medicaid-2027-implementation-guide/sitemap.xml
+Sitemap: https://archanacontent.github.io/nasa-firms-api-guide/sitemap.xml
