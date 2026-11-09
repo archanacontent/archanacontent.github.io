@@ -539,6 +539,12 @@ ul{margin:0;padding:0;list-style:none}
   --cyan:#D9A441;--purple:#D9A441;--pink:#D9A441;--blue:#D9A441;--lilac:#D9A441;--teal:#D9A441;--orange:#D9A441;
   --f-b:'Public Sans',Arial,sans-serif;--r:8px;--photo:saturate(.35) brightness(.95)}
 body{font-weight:400}
+
+/* Featured work: type and industry tag, link to the full work page */
+.wbody .wtag{display:block;font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:var(--ac);opacity:.9}
+.wall{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:9px 14px;border-radius:999px;border:1px solid var(--glass-line);color:var(--bone);text-decoration:none;font-family:var(--f-h);font-weight:600;font-size:13px;transition:border-color .3s}
+.wall b{font-family:ui-monospace,monospace;font-weight:400;font-size:11px;color:var(--ac)}
+.wall:hover{border-color:var(--ac)}
 </style>
 </head>
 <body>
@@ -582,7 +588,7 @@ body{font-weight:400}
       <p class="lede">I help technology companies explain complex products to the people who buy and use them. My work covers the full span, from developer guides, product documentation and API documentation that drive adoption to case studies, whitepapers and end-to-end B2B campaign content that turns buyer interest into sales conversations.</p>
       <div class="hero-cta">
         <a class="btn btn-grad" href="mailto:pandaarchana702@gmail.com">Let's connect <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a class="btn btn-ghost" href="#work">See the work</a>
+        <a class="btn btn-ghost" href="work/">See the work</a>
       </div>
     </div>
   </div>
@@ -829,58 +835,28 @@ body{font-weight:400}
   <section class="block pad works r" id="work">
     <div class="sh"><h2>Featured Work</h2></div>
     <div class="wlist">
+      <a class="witem" href="https://archanacontent.github.io/nih-sbir-proposal-guide/" target="_blank" rel="noopener">
+        <div class="slot ph-c wthumb shot"><img src="thumbs/nih.jpg" alt=""></div>
+        <div class="wbody"><h4>NIH SBIR Proposal Guide for Health Companies</h4><span class="wtag">GUIDE · HEALTHCARE & LIFE SCIENCES</span></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
       <a class="witem" href="https://github.com/archanacontent/nvd-cve-api-docs" target="_blank" rel="noopener">
         <div class="slot ph-a wthumb shot"><img src="thumbs/nvd.jpg" alt=""></div>
-        <div class="wbody"><h4>Cybersecurity Risk Prioritization After the 2026 NVD Change - NVD CVE API Developer Guide</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-      <a class="witem" href="https://archanacontent.github.io/nasa-firms-api-guide/" target="_blank" rel="noopener">
-        <div class="slot ph-a wthumb shot"><img src="thumbs/firms.jpg" alt=""></div>
-        <div class="wbody"><h4>The Satellites Behind NASA's Fire Map Are Retiring - NASA FIRMS API Guide</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="wbody"><h4>Cybersecurity Risk Prioritization After the 2026 NVD Change - NVD CVE API Developer Guide</h4><span class="wtag">GUIDE · CYBERSECURITY</span></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
       <a class="witem" href="https://archanacontent.github.io/articles/wildfire-monitoring-after-modis/" target="_blank" rel="noopener">
         <div class="slot ph-a wthumb shot"><img src="thumbs/modis.jpg" alt=""></div>
-        <div class="wbody"><h4>Wildfire Monitoring After MODIS: What Changes for Fire Teams in 2027 - Article</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-      <a class="witem" href="https://archanacontent.github.io/medicaid-2027-implementation-guide/" target="_blank" rel="noopener">
-        <div class="slot ph-c wthumb shot"><img src="thumbs/medicaid.jpg" alt=""></div>
-        <div class="wbody"><h4>Medicaid's January 2027 Double Deadline - Medicaid 2027 Implementation Guide</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-      <a class="witem" href="https://archanacontent.github.io/medically-frail-guide/" target="_blank" rel="noopener">
-        <div class="slot ph-e wthumb shot"><img src="thumbs/frail.jpg" alt=""></div>
-        <div class="wbody"><h4>Medically Frail: The Exemption States Can't Afford To Get Wrong - Medicaid 2027 Series, Part 2</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-      <a class="witem" href="https://archanacontent.github.io/openfda-drug-safety-guide/" target="_blank" rel="noopener">
-        <div class="slot ph-d wthumb shot"><img src="thumbs/openfda.jpg" alt=""></div>
-        <div class="wbody"><h4>The Risk In openFDA Adverse Event Data - openFDA Drug Safety Developer Guide</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-      <a class="witem" href="https://archanacontent.github.io/b2b-saas/" target="_blank" rel="noopener">
-        <div class="slot ph-a wthumb shot"><img src="thumbs/playbook.jpg" alt=""></div>
-        <div class="wbody"><h4>B2B SaaS Product Launch Playbook</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-      <a class="witem" href="https://archanacontent.github.io/rfp-response/" target="_blank" rel="noopener">
-        <div class="slot ph-c wthumb shot"><img src="thumbs/rfp.jpg" alt=""></div>
-        <div class="wbody"><h4>RFP Response: Member Services Contact Centre Outsourcing</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-      <a class="witem" href="samples/SOP-ELN-001.pdf" target="_blank" rel="noopener">
-        <div class="slot ph-e wthumb shot"><img src="thumbs/sop.jpg" alt=""></div>
-        <div class="wbody"><h4>SOP: Recording And Signing An Experiment Entry In An Electronic Lab Notebook</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="wbody"><h4>Wildfire Monitoring After MODIS: What Changes for Fire Teams in 2027</h4><span class="wtag">ARTICLE · GOVERNMENT & PUBLIC SECTOR</span></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
       <a class="witem" href="https://docs.google.com/document/d/11W0LVpyEug10N7WzVpxeMKN7qoAbccKJFo5tWjJUIwQ/edit?usp=drivesdk" target="_blank" rel="noopener">
         <div class="slot ph-b wthumb shot"><img src="thumbs/agentic.jpg" alt=""></div>
-        <div class="wbody"><h4>Why Do Agentic AI Projects Fail? What Changed in 2026</h4></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="wbody"><h4>Why Do Agentic AI Projects Fail? What Changed in 2026</h4><span class="wtag">ARTICLE · AI & ENTERPRISE TECH</span></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
-      <div class="witem pending">
-        <div class="slot ph-a wthumb shot"><img src="thumbs/aiwashing.jpg" alt=""></div>
-        <div class="wbody"><h4>What is AI Washing? The Tech World's New Deceptive Marketing Trend</h4><span class="soon">Coming soon</span></div>
-      </div>
-      <!-- WHEN THE AI WASHING LINK IS READY:
-           1. change the wrapper above from a div to an anchor
-           2. give it  class="witem"  href="YOUR-URL"  target="_blank"  rel="noopener"
-           3. drop the word pending from the class
-           4. delete the span with class soon, and add an arrow span
-              after the wbody div:  <span class="wgo">arrow</span>
-           Copy the shape from the Agentic AI entry above. -->
+      <a class="witem" href="https://archanacontent.github.io/asked/" target="_blank" rel="noopener">
+        <div class="slot ph-d wthumb shot"><img src="thumbs/asked.jpg" alt=""></div>
+        <div class="wbody"><h4>Asked: A Free Tool That Finds The Questions AI Search Is Asking</h4><span class="wtag">TOOL · B2B SAAS & MARKETING</span></div><span class="wgo"><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
     </div>
+    <a class="wall" href="work/">See all work <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6.5 5H11v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </section>
 
   <section class="block pad early r">
